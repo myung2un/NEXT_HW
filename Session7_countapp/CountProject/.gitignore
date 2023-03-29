@@ -1,0 +1,4 @@
+.vscode
+migration
+db.sqlite3
+__pycache__
