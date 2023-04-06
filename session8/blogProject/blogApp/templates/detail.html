@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Article</title>
+  </head>
+  <body style="background-color: beige">
+    <h2 style="font-size: 30px; color: pink">글 상세 페이지</h2>
+    <div>
+      <h2 style="font-size: 20px; color: palevioletred">제목</h2>
+      {{ detail.title }}
+    </div>
+    <div>
+      <h2 style="font-size: 20px; color: palevioletred">내용</h2>
+      {{ detail.content }}
+    </div>
+    <div style="padding-bottom: 20px">
+      <h2 style="font-size: 20px; color: palevioletred">작성시간</h2>
+      {{ detail.time }}
+    </div>
+    <a
+      href="{% url 'list' %}"
+      style="
+        font-size: 20px;
+        font-weight: 600;
+        color: rosybrown;
+        text-decoration: none;
+      "
+      >📚 목록으로 돌아가기</a
+    >
+  </body>
+</html>

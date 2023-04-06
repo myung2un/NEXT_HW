@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Article List</title>
+  </head>
+  <body style = 'background-color: beige;'>
+    <h2 style = 'font-size: 50px; color: pink;'>이맹순의 이맹저맹</h2>
+    <div style = 'display: flex; justify-content: center; align-items: center;'>
+        {% for article in articles %}
+        <li><a href="{% url 'detail' article.id %}" style="color: rgb(19, 125, 201); text-decoration: none;">{{ article.title }}</a></li>
+        {% endfor %}
+      </ul>
+    </div>
+    <div style="padding: 20px;">
+      <a href="{% url 'new' %}" style="font-size: 20px; font-weight: 600; color: rosybrown; text-decoration: none;">✍🏻 새로운 글 쓰러 가기</a>
+    </div>
+    </div>
+    <div>
+      <div style="padding: 14px;">
+        <a href="{% url 'category' 'hobby' %}" style="font-size: 15px; font-weight: 700; color:cornflowerblue ; text-decoration: none;">취미 {{hobbies_num}}</a>
+      </div>
+      <div style="padding: 14px;">
+        <a href="{% url 'category' 'food' %}" style="font-size: 15px; font-weight: 700; color:cornflowerblue ; text-decoration: none;">음식 {{foods_num}}</a>
+      </div>
+      <div style="padding: 14px;">
+        <a href="{% url 'category' 'programming' %}" style="font-size: 15px; font-weight: 700; color:cornflowerblue ; text-decoration: none;">프로그래밍 {{programmings_num}}</a>
+      </div>
+    </div>
+  </body>
+</html>

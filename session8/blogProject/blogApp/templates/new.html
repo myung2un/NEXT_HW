@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Article</title>
+  </head>
+  <body style="background-color: beige">
+    <h2 style="font-size: 30px; color: pink">글쓰는 페이지</h2>
+    <form action="/new" method="post">
+      {% csrf_token %}
+      <div style="padding: 14px">
+        <div style="font-size: 15px; font-weight: 700; color: cornflowerblue">
+          카테고리
+        </div>
+        <!-- <input type="text" name="category" /> -->
+        <select name="category">
+          <option value="hobby">취미</option>
+          <option value="food">음식</option>
+          <option value="programming">프로그래밍</option>
+        </select>
+      </div>
+      <div style="padding: 14px">
+        <div style="font-size: 15px; font-weight: 700; color: cornflowerblue">
+          글 제목
+        </div>
+        <input type="text" name="title" />
+      </div>
+      <div style="padding: 14px">
+        <div style="font-size: 15px; font-weight: 700; color: cornflowerblue">
+          글 내용
+        </div>
+        <textarea name="content" cols="30" rows="10"></textarea>
+      </div>
+      <button type="submit">작성 완료</button>
+    </form>
+  </body>
+</html>

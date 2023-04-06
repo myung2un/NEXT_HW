@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Category</title>
+  </head>
+  <body style="background-color: beige">
+    <h2 style="font-size: 30px; color: pink">이맹순의 이맹저맹</h2>
+    <h1 style="font-size: 20px; color: palevioletred">{{ category_name }}</h1>
+    <div>
+      <ul>
+        {% for article in category_articles %}
+        <li>
+          <a
+            href="{% url 'detail' article.id %}"
+            style="
+              font-size: 15px;
+              font-weight: 700;
+              color: cornflowerblue;
+              text-decoration: none;
+            "
+            >{{ article.title }}</a
+          >
+        </li>
+        {% endfor %}
+      </ul>
+    </div>
+    <a
+      href="{% url 'new' %}"
+      style="
+        font-size: 20px;
+        font-weight: 600;
+        color: rosybrown;
+        text-decoration: none;
+      "
+      >✍🏻 글 쓰러 가기</a
+    >
+    <a
+      href="{% url 'list' %}"
+      style="
+        font-size: 20px;
+        font-weight: 600;
+        color: rosybrown;
+        text-decoration: none;
+      "
+      >📚 목록 보기</a
+    >
+  </body>
+</html>
