@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body
+    style="
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      background-color: #fafafa;
+    "
+  >
+    <div
+      style="
+        background-color: #ffffff;
+        padding-left: 40px;
+        padding-right: 40px;
+        padding-top: 20px;
+        padding-bottom: 20px;
+        border-radius: 15px;
+        box-shadow: 0px 5px 20px #00000030;
+      "
+    >
+      <div>
+        <h2 style="margin: 0">제목</h2>
+        <p style="margin: 0">{{ task.title }}</p>
+      </div>
+      <div style="margin-top: 20px">
+        <h2 style="margin: 0">세부사항</h2>
+        <p style="margin: 0">{{ task.content }}</p>
+      </div>
+      <div style="margin-top: 20px">
+        <h2 style="margin: 0">마감기한</h2>
+        <p style="margin: 0">{{ task.deadline }}</p>
+        <!-- 마감 기한 표시 -->
+      </div>
+    </div>
+    <div style="margin-top: 20px">
+      <a href="{% url 'home' %}">🏠 목록으로 돌아가기</a>
+      <a href="{% url 'update' task.pk %}">수정하기</a>
+      <a href="{% url 'delete' task.pk %}">삭제하기</a>
+    </div>
+  </body>
+</html>
